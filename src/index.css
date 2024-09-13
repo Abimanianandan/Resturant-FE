@@ -1,0 +1,13 @@
+   .home:hover{
+     transform: scale(1.1);
+     cursor: pointer;
+   }
+   .btn:hover{
+      background-color: yellow !important;
+      color: red !important;
+      border: 2px solid green !important;
+      cursor: pointer;
+   }
+  
+   
+  
