@@ -1,37 +1,27 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FcRating } from "react-icons/fc";
 import { FaLocationDot } from "react-icons/fa6";
 import CarouselPage from "./CarouselPage";
-// import { resturantContext } from "./App";
-import { json, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { addResturant as addResturantAction} from "../slice/resturantReducer";
+import { resturantContext } from "./App";
+import {  Link } from "react-router-dom";
 
 
 const DisplayResturant = () => {
-  // const [resturant, setResturant] = useState([]);
-  // const { name } = useContext(resturantContext);
-   const [name, setName] = useState("");
-
-  const dispatch = useDispatch();
-  const resturant= useSelector((state)=>state.resturant);
-  console.log(JSON.stringify(resturant));
-  
+  const [resturant, setResturant] = useState([]);
+  const { name } = useContext(resturantContext);
   useEffect(() => {
+
     fetchData();
-  }, [dispatch]);
+  }, []);
 
   const fetchData = async () => {
     try {
       const res = await axios.get(
         "https://resturant-be.onrender.com/api/resturant/allresturant"
       );
-      console.log(res.data);
-      const data = res.json();
       
-      dispatch(addResturantAction(data.resturant))
-      // setResturant(res.data.resturant);
+      setResturant(res.data.resturant);
     } catch (error) {
       console.log(error.message);
     }
@@ -50,7 +40,7 @@ const DisplayResturant = () => {
               >
              
                 
-                {/* {item.name.toLowerCase().includes(name.toLowerCase()) ? ( */}
+                {item.name.toLowerCase().includes(name.toLowerCase()) ? (
                   <div className="card h-100">
                     <img
                       src={item.img}
@@ -79,9 +69,9 @@ const DisplayResturant = () => {
                       </Link>
                     </div>
                   </div>
-                {/* ) : (
+                 ) : (
                   ""
-                )} */}
+                )} 
               </div>
             );
           })}

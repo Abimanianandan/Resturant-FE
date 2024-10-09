@@ -4,22 +4,24 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { FaCartArrowDown } from "react-icons/fa";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
-// import React, { useContext } from "react";
+import React, { useContext } from "react";
 import { resturantContext } from "./App";
+import { useNavigate } from "react-router-dom";
 
 const TopBar = () => {
-  // const {
-  //   name,
-  //   setName,
-  //   cart,
-  //   setCart,
-  //   total,
-  //   setTotal,
-  //   cartItem,
-  //   setCartItem,
-  //   toggle,
-  //   setToggle,
-  // } = useContext(resturantContext);
+  const {
+    name,
+    setName,
+    cart,
+    setCart,
+    total,
+    setTotal,
+    cartItem,
+    setCartItem,
+    toggle,
+    setToggle,
+  } = useContext(resturantContext);
+  const navigate = useNavigate();
 
   const cartPage = () => {
     if (cart) {
@@ -33,7 +35,9 @@ const TopBar = () => {
 
   const cartPurchase = () => {
     alert("Food order successfully..🤩");
-    location.reload();
+    setCart(0);
+    setTotal(0);
+    navigate("/")
   };
 
   return (
