@@ -4,22 +4,22 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { FaCartArrowDown } from "react-icons/fa";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
 import { resturantContext } from "./App";
 
 const TopBar = () => {
-  const {
-    name,
-    setName,
-    cart,
-    setCart,
-    total,
-    setTotal,
-    cartItem,
-    setCartItem,
-    toggle,
-    setToggle,
-  } = useContext(resturantContext);
+  // const {
+  //   name,
+  //   setName,
+  //   cart,
+  //   setCart,
+  //   total,
+  //   setTotal,
+  //   cartItem,
+  //   setCartItem,
+  //   toggle,
+  //   setToggle,
+  // } = useContext(resturantContext);
 
   const cartPage = () => {
     if (cart) {
