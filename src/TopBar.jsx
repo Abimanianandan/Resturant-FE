@@ -21,9 +21,6 @@ const TopBar = () => {
     toggle,
     setToggle,
   } = useContext(resturantContext);
-
-  
-  
   const navigate = useNavigate();
 
   const cartPage = () => {
@@ -54,12 +51,12 @@ const TopBar = () => {
       >
         <Container>
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Form className="d-flex  p-3">
+          <Navbar.Collapse id="navbarScroll" className="navbar justify-content-center">
+            <Form className=" d-flex  w-50 p-3">
               <input
                 type="search"
                 placeholder="Search"
-                className=" form-control "
+                className=" form-control me-2"
                 aria-label="Search"
                 name="name"
                 value={name}
