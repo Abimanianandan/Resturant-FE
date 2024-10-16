@@ -21,6 +21,9 @@ const TopBar = () => {
     toggle,
     setToggle,
   } = useContext(resturantContext);
+
+  
+  
   const navigate = useNavigate();
 
   const cartPage = () => {
@@ -37,25 +40,26 @@ const TopBar = () => {
     alert("Food order successfully..🤩");
     setCart(0);
     setTotal(0);
-    navigate("/")
+    setCartItem("");
+    setToggle(false);
+    navigate("/");
   };
 
   return (
     <>
       <Navbar
         expand="lg"
-        className="bg-body w-75"
+        className="bg-body"
         sticky="top"
-        style={{ borderRadius: "20px", marginLeft: "190px", marginTop: "20px" }}
       >
         <Container>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
-            <Form className="d-flex w-75 p-3">
+            <Form className="d-flex  p-3">
               <input
                 type="search"
                 placeholder="Search"
-                className=" form-control me-2"
+                className=" form-control "
                 aria-label="Search"
                 name="name"
                 value={name}
