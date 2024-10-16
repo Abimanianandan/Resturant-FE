@@ -112,6 +112,7 @@ const Resturant6 = () => {
                               <p className="card-text fst-italic text-secondary">
                                 {item.fooditem}
                               </p>
+                              <div className="d-flex flex-wrap gap-3">
                               <Button
                                 to={""}
                                 className="btn btn-primary"
@@ -121,11 +122,12 @@ const Resturant6 = () => {
                               </Button>
                               <Button
                                 to={""}
-                                className="btn btn-danger ms-3"
+                                className="btn btn-danger"
                                 onClick={() => handleDecrease(item)}
                               >
                                 Remove to Cart
                               </Button>
+                              </div>
                             </div>
                           </div>
                         </div>

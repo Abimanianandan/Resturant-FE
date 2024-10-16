@@ -92,7 +92,7 @@ const Resturant4 = () => {
                           <div className="col-md-4">
                             <img
                               src={item.img}
-                              className="img-fluid mt-5 ms-3"
+                              className="img-fluid mt-5"
                               alt="foods"
                               style={{ borderRadius: "30%" }}
                             />
@@ -113,20 +113,20 @@ const Resturant4 = () => {
                               <p className="card-text fst-italic text-secondary">
                                 {item.fooditem}
                               </p>
-                              <Button
-                                to={""}
-                                className="btn btn-primary"
-                                onClick={() => handleIncrease(item)}
-                              >
-                                Add to Cart
-                              </Button>
-                              <Button
-                                to={""}
-                                className="btn btn-danger ms-3"
-                                onClick={() => handleDecrease(item)}
-                              >
-                                Remove to Cart
-                              </Button>
+                              <div className="d-flex flex-wrap gap-3">
+                            <Button
+                              className="btn btn-primary"
+                              onClick={() => handleIncrease(item)}
+                            >
+                              Add to Cart
+                            </Button>
+                            <Button
+                              className="btn btn-danger"
+                              onClick={() => handleDecrease(item)}
+                            >
+                              Remove from Cart
+                            </Button>
+                            </div>
                             </div>
                           </div>
                         </div>

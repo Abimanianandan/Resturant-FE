@@ -98,7 +98,7 @@ const Resturant1 = () => {
                             alt="foods"
                           />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 ">
                           <div className="card-body">
                             <h5 className="card-title">{item.name}</h5>
                             <p className="card-text fw-bold">
@@ -114,6 +114,7 @@ const Resturant1 = () => {
                             <p className="card-text fst-italic text-secondary">
                               {item.fooditem}
                             </p>
+                            <div className="d-flex flex-wrap gap-3">
                             <Button
                               className="btn btn-primary"
                               onClick={() => handleIncrease(item)}
@@ -121,11 +122,12 @@ const Resturant1 = () => {
                               Add to Cart
                             </Button>
                             <Button
-                              className="btn btn-danger ms-3"
+                              className="btn btn-danger"
                               onClick={() => handleDecrease(item)}
                             >
                               Remove from Cart
                             </Button>
+                            </div>
                           </div>
                         </div>
                       </div>

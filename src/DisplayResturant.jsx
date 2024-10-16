@@ -30,12 +30,12 @@ const DisplayResturant = () => {
     <>
       <div className="container mt-5">
         {name ? "" : <CarouselPage />}
-        <div className=" row row-cols-1 row-cols-md-4 g-4 mt-5">
+        <div className=" row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-5 ">
           {resturant.map((item,index) => {
 
             return (
               <div
-                className="col shadow p-3 mb-5 bg-body-tertiary rounded home"
+                className="col shadow p-3 mb-5 bg-body-tertiary rounded home "
                 key={index}
               >
              
@@ -48,7 +48,7 @@ const DisplayResturant = () => {
                       alt="resturant-img"
                       style={{ height: "250px" }}
                     />
-                    <div className="card-body">
+                    <div className="card-body text-center" >
                       <h5 className="card-title">{item.name}</h5>
                       <b className="card-text">
                         <FcRating fontSize={"20px"} /> {item.rating}
@@ -63,7 +63,7 @@ const DisplayResturant = () => {
                       <Link
                         to={item.link}
                         className="btn btn-primary"
-                        style={{ marginLeft: "60px" }}
+                        // style={{ marginLeft: "60px" }}
                       >
                         Visit Hotel
                       </Link>
