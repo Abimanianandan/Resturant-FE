@@ -88,12 +88,12 @@ const Resturant5 = () => {
                     {item.name.toLowerCase().includes(name.toLowerCase()) ? (
                       <div className="card mb-3" style={{ maxWidth: "540px" }}>
                         <div className="row g-0">
-                          <div className="col-md-4">
+                          <div className="col-md-4 d-flex justify-content-center">
                             <img
                               src={item.img}
-                              className="img-fluid mt-5 "
+                              className="img-fluid mt-5 rounded-circle"
                               alt="foods"
-                              style={{ borderRadius: "50%" }}
+                              style={{ height:"180px" }}
                             />
                           </div>
                           <div className="col-md-7 ms-4">
