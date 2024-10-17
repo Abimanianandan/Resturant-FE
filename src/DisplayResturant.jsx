@@ -5,7 +5,6 @@ import { FaLocationDot } from "react-icons/fa6";
 import CarouselPage from "./CarouselPage";
 import { resturantContext } from "./App";
 import {  Link } from "react-router-dom";
-import Loading from "./Loading";
 
 
 const DisplayResturant = () => {
@@ -29,7 +28,6 @@ const DisplayResturant = () => {
   };
   return (
     <>
-    { resturant == "" ? <Loading/> : "" }
       <div className="container mt-5">
         {name ? "" : <CarouselPage />}
         <div className=" row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 mt-5 ">
@@ -40,9 +38,9 @@ const DisplayResturant = () => {
                 className="col shadow p-3 mb-5 bg-body-tertiary rounded home "
                 key={index}
               >
+             
                 
                 {item.name.toLowerCase().includes(name.toLowerCase()) ? (
-                
                   <div className="card h-100">
                     <img
                       src={item.img}
@@ -83,4 +81,3 @@ const DisplayResturant = () => {
 };
 
 export default DisplayResturant;
-
