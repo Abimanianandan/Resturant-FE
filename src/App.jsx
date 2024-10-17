@@ -21,7 +21,6 @@ const App = () => {
   const [total, setTotal] = useState(0);
   const [cartItem, setCartItem] = useState([]);
   const [toggle, setToggle] = useState(false);
-
   return (
     <BrowserRouter>
       <resturantContext.Provider
