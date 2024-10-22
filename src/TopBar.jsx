@@ -7,7 +7,7 @@ import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import React, { useContext } from "react";
 import { resturantContext } from "./App";
 import { useNavigate } from "react-router-dom";
-import Delivery from "./delivery";
+import Delivery from "./Delivery"
 
 const TopBar = () => {
   const {
