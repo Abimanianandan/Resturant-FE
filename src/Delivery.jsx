@@ -3,19 +3,20 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
 
-const Delivery = ({setModel,setCart,setTotal,setToggle,setCartItem}) => {
+const Delivery = ({setModel,setCart,setTotal,setToggle,setCartItem,setSearch}) => {
     const navigate = useNavigate();
     const  cancelCart = () =>{
         setModel(false);        
     }
     const orderCart = () =>{
-      alert("your food successfully ordered...❄️");
+      // alert("your food successfully ordered...❄️");
+      setSearch(true);
       setModel(false);
       setToggle(false);
       setCartItem("");
       setCart(0);
       setTotal(0);
-      navigate("/");
+      navigate("/thanks");
     }
   return (
     <>

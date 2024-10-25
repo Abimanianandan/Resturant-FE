@@ -12,6 +12,7 @@ import Resturant5 from "./Resturant5";
 import Resturant6 from "./Resturant6";
 import Resturant7 from "./Resturant7";
 import Resturant8 from "./Resturant8";
+import Thanks from "./Thanks";
 
 export const resturantContext = createContext();
 
@@ -22,6 +23,7 @@ const App = () => {
   const [cartItem, setCartItem] = useState([]);
   const [model, setModel] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const [search, setSearch] = useState(false);
   return (
     <BrowserRouter>
       <resturantContext.Provider
@@ -37,10 +39,12 @@ const App = () => {
           toggle,
           setToggle,
           model,
-          setModel
+          setModel,
+          search,
+          setSearch
         }}
       >
-        <TopBar />
+       {search ? "" : <TopBar />  }
         <Routes>
           <Route path="/" element={<DisplayResturant />} />
           <Route path="/resturant1" element={<Resturant1 />} />
@@ -51,6 +55,7 @@ const App = () => {
           <Route path="/resturant6" element={<Resturant6 />} />
           <Route path="/resturant7" element={<Resturant7 />} />
           <Route path="/resturant8" element={<Resturant8 />} /> 
+          <Route path="/thanks" element={<Thanks/>} />
         </Routes>
       </resturantContext.Provider>
     </BrowserRouter>

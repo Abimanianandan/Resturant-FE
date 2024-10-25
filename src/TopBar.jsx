@@ -6,7 +6,6 @@ import { FaCartArrowDown } from "react-icons/fa";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import React, { useContext } from "react";
 import { resturantContext } from "./App";
-import { useNavigate } from "react-router-dom";
 import Delivery from "./Delivery"
 
 const TopBar = () => {
@@ -21,9 +20,9 @@ const TopBar = () => {
     toggle,
     setToggle,
     model,
-    setModel
+    setModel,
+    setSearch
   } = useContext(resturantContext);
-  const navigate = useNavigate();
 
   const cartPage = () => {
     if (cart) {
@@ -41,7 +40,7 @@ const TopBar = () => {
 
   return (
     <>
-    { model ? <Delivery setModel={setModel} setCart={setCart} setTotal={setTotal} setToggle={setToggle} setCartItem={setCartItem}/>  :
+    { model ? <Delivery setModel={setModel} setCart={setCart} setTotal={setTotal} setToggle={setToggle} setCartItem={setCartItem} setSearch={setSearch}/>  :
       <Navbar
         expand="lg"
         className="bg-body"
