@@ -20,8 +20,7 @@ const TopBar = () => {
     toggle,
     setToggle,
     model,
-    setModel,
-    setSearch
+    setModel
   } = useContext(resturantContext);
 
   const cartPage = () => {
@@ -40,7 +39,7 @@ const TopBar = () => {
 
   return (
     <>
-    { model ? <Delivery setModel={setModel} setCart={setCart} setTotal={setTotal} setToggle={setToggle} setCartItem={setCartItem} setSearch={setSearch}/>  :
+    { model ? <Delivery setModel={setModel} setCart={setCart} setTotal={setTotal} setToggle={setToggle} setCartItem={setCartItem}/>  :
       <Navbar
         expand="lg"
         className="bg-body"
